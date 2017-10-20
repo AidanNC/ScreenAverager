@@ -8,7 +8,7 @@ ez IP $$$
 
 ### How do I get set up? ###
 
-¯\_(ツ)_/¯
+### ¯\_(ツ)_/¯ ###
 
 ### Contribution guidelines ###
 
