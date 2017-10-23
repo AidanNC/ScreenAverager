@@ -57,6 +57,8 @@ public class Info {
         return bi;
     }
 
+
+    //this takes an averaged picture and then makes it into a compressed pixel image of it
     public BufferedImage averageScreenCompress(BufferedImage bi, int squareSize, int imageWidth, int imageHeight){
         int xMeasure = imageWidth/squareSize;
         int yMeasure = imageHeight/squareSize;
@@ -66,11 +68,10 @@ public class Info {
         for(int i = 0; i < xMeasure; i++){
             for(int j = 0; j < yMeasure; j++){
 
-                Color c = mostCommonColor()
-                compressedIMG.setRGB();
+                compressedIMG.setRGB(i,j,bi.getRGB(i*squareSize, j * squareSize));
             }
         }
-        return bi;
+        return compressedIMG;
     }
 
     //yo make sure that square size is a factor of both the height and the width

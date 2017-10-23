@@ -25,6 +25,12 @@ public class Runner {
 
         //String read = "C:\\Users\\Aidan Nuzum-Clark\\IdeaProjects\\LeagueBot2.0\\src\\ninja.jpg";
         int size = 10;
+
+
+        img = info.getScreenshot();
+        info.saveScreenshot(info.averageScreenCompress(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2),size,img.getWidth(),img.getHeight()));
+
+
         /*
         try {
             img = ImageIO.read(new File(read));
@@ -32,7 +38,7 @@ public class Runner {
             System.out.println("fuailtere");
         }
         */
-        img = info.getScreenshot();
+        //img = info.getScreenshot();
         //info.saveScreenshot(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 1),1);
 /*
         try {
@@ -41,7 +47,7 @@ public class Runner {
             System.out.println("fuailtere");
         }
         */
-        img = info.getScreenshot();
+        //mg = info.getScreenshot();
         ///info.saveScreenshot(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2), 2);
 
 
