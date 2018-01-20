@@ -25,7 +25,6 @@ public class Info {
     }
 
 
-
     public BufferedImage getScreenshot(){
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -34,6 +33,20 @@ public class Info {
         int yMeasure = (int)screenSize.getHeight();
         try {
             currentScreen = robot.createScreenCapture( new Rectangle(0, 0, xMeasure, yMeasure) );
+            return currentScreen;
+        } catch(Exception e) {
+        }
+        return currentScreen;
+    }
+
+    public BufferedImage getScreenshot(int x, int y, int width, int height){
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        int xMeasure = (int)screenSize.getWidth();
+        int yMeasure = (int)screenSize.getHeight();
+        try {
+            currentScreen = robot.createScreenCapture( new Rectangle(x, y, width, height) );
             return currentScreen;
         } catch(Exception e) {
         }
@@ -100,7 +113,6 @@ public class Info {
     }
 
 
-
     public BufferedImage simplifyCommonColor(BufferedImage bi, int xstart, int ystart, int squareSize ){
         ArrayList<Color> colors = new ArrayList<>();
         for(int x = xstart; x < xstart + squareSize; x++){
@@ -130,6 +142,10 @@ public class Info {
 
     }
 
+
+
+
+
     public Color mostCommonColor(ArrayList<Color> colors){
         ArrayList<ColorAndCount> tally = new ArrayList<>();
         //tally.add(new ColorAndCount(new Color(224,0, 156)));
@@ -158,8 +174,6 @@ public class Info {
         //System.out.println(returningColor);
         return returningColor;
     }
-
-
 
     public BufferedImage simplify(BufferedImage bi, int xstart, int ystart, int squareSize){
         int total = 0;
@@ -242,5 +256,37 @@ public class Info {
         }
     }
 
+
+    /////this is stuff that we tried to do but I don't know if it actually will work, maybe we will come back to it later though///////
+    /*
+    //they should both be pixalized images
+    public boolean imageWithinImage(BufferedImage wholeImage, BufferedImage target){
+        int width = target.getWidth();
+        int height = target.getHeight();
+        //loop through the whole x and y in chunks that are the same size as the target
+        for(int i = 0; i < wholeImage.getWidth() / width; i ++){
+            for(int j = 0; j < wholeImage.getHeight() / height; j ++){
+                BufferedImage temp = wholeImage.getSubimage(i * width, j * height, width, height);
+                if(similarEnough(temp, target)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean similarEnough(BufferedImage a, BufferedImage b){
+        Color aColor =
+
+    }
+
+    public int sumColor(BufferedImage a){
+        for(int i = 0; i < a.getHeight(); i ++){
+            for(int j = 0; j < a.getWidth(); j ++){
+
+            }
+        }
+    }
+    */
 
 }

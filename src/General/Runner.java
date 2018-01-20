@@ -23,32 +23,29 @@ public class Runner {
         BufferedImage img = null;
 
 
-        //String read = "C:\\Users\\Aidan Nuzum-Clark\\IdeaProjects\\LeagueBot2.0\\src\\ninja.jpg";
-        int size = 10;
+        int size = 2;
+
+
+        //img = info.getScreenshot();
+        //info.saveScreenshot(info.averageScreenCompress(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2),size,img.getWidth(),img.getHeight()));
 
 
         img = info.getScreenshot();
-        info.saveScreenshot(info.averageScreenCompress(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2),size,img.getWidth(),img.getHeight()));
+        //info.averageScreen(img,size,img.getWidth(), img.getHeight(), 1);
+        info.saveScreenshot(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2),1);
 
+        img = info.getScreenshot(1218, 122, 50, 50);
+        img = null;
+        try {
+            img = ImageIO.read(new File("/Users/aidan/Documents/workspace/Screen Averager/src/Screen Shot 2018-01-09 at 12.35.52 AM.png"));
 
-        /*
-        try {
-            img = ImageIO.read(new File(read));
         } catch (IOException e) {
-            System.out.println("fuailtere");
+            System.out.println("fail");
         }
-        */
-        //img = info.getScreenshot();
-        //info.saveScreenshot(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 1),1);
-/*
-        try {
-            img = ImageIO.read(new File(read));
-        } catch (IOException e) {
-            System.out.println("fuailtere");
-        }
-        */
-        //mg = info.getScreenshot();
-        ///info.saveScreenshot(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2), 2);
+
+        //info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2);
+        img = info.getScreenshot(443, 143, 63, 63);
+        info.saveScreenshot(info.averageScreen(img,size,img.getWidth(), img.getHeight(), 2), 2);
 
 
 
