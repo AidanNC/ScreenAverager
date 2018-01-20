@@ -8,12 +8,12 @@ ez IP $$$
 
 ### How do I get set up? ###
 
-### ¯\_(ツ)_/¯ ###
+"¯\_(ツ)_/¯" 
 
 ### Contribution guidelines ###
 
-pls comment
+idk
 
 ### Who do I talk to? ###
 
-eide or d0ge
+I don't talk though
