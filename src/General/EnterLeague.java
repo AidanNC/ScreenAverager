@@ -214,7 +214,7 @@ public class EnterLeague {
         }
     }
 
-    public void selectChamp(String champName)
+    public void selectChamp(String champName) //types in a champion name, clicks the icon, and locks in
     {
         mouseClick(850,200);
         robot.delay(200);
