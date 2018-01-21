@@ -17,7 +17,7 @@ public class Runner {
 
         EnterLeague game = new EnterLeague();
         game.openApp();
-        game.loginCredentials("konusamam","#Qr7ad89d");
+        game.loginCredentials("Enter Username Here","Enter Password Here");
 
 
         if(ingame) {
