@@ -17,8 +17,12 @@ public class Runner {
 
         EnterLeague game = new EnterLeague();
         game.openApp();
-        game.loginCredentials("konusamam","#Qr7ad89d");
+        game.loginCredentials("username","password");
+        game.startBotGame();
+        game.acceptMatch();
+        game.selectChamp("taliyah");
 
+        //after loading in, set ingame to true
 
         if(ingame) {
             Info info = new Info();
