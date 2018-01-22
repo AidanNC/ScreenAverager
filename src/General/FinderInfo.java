@@ -2,6 +2,7 @@ package General;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -25,6 +26,7 @@ public class FinderInfo {
             for(int j = 0; j < yMeasure; j++){
 
                 returner.add(commonColorOfImageSection(bi, i, j, squareSize));
+                //System.out.println(commonColorOfImageSection(bi, i, j, squareSize));
 
             }
         }
@@ -106,20 +108,22 @@ public class FinderInfo {
         return returningColor;
     }
 
+
+/*
     public ArrayList<Color> removeDuplicateColors(ArrayList<Color> allColors){
         int temp = allColors.size();
         ArrayList<Color> returner = new ArrayList<>();
         //returner.add(null);
-
         boolean done = false;
-        for(Color cc: allColors){
+        for(Color c: allColors){
             if(returner.size() == 0){
-                returner.add(cc);
+                System.out.println("adsfasdfasdf");
+                returner.add(c);
             }
-            for(Color c: returner){
-                if(!(c.equals(cc))){
+            for(Color cc: returner){
+                if((cc.equals(c))){
                     returner.add(c);
-                    done = true;
+                    //`done = true;
                 }
                 if(done){
                     done = false;
@@ -130,6 +134,53 @@ public class FinderInfo {
 
         return returner;
     }
+    */
+    public int compareImages(ImageColorsAndSize bigImage, ImageColorsAndSize reducedSmallImage){
+        int count = 0;
+        for(Color c: reducedSmallImage.colors){
+            for(Color cc: bigImage.colors){
+                if(aboutEqualColor(c, cc)){
+                    count ++;
+                }
+            }
+        }
+        return count;
+    }
+
+    public ArrayList<Color> removeDuplicateColors(ArrayList<Color> allColors){
+        ArrayList<Color> returner = new ArrayList<>();
+        returner.add(allColors.get(0));
+
+        for(Color c: allColors){
+            int temp = returner.size();
+            for(int i = 0; i < temp; i ++){
+                if(!(c.equals(returner.get(i)))){
+                    boolean addIt = true;
+                    for(Color cc: returner){
+                        if(cc.equals(c)){
+                            addIt = false;
+                            break;
+                        }
+                    }
+                    if(addIt) {
+                        returner.add(c);
+                    }
+                    break;
+                }
+            }
+        }
+        return returner;
+    }
+
+    public boolean aboutEqualColor(Color c, Color cc){
+        int accuracy = 1;
+        if( (Math.abs(c.getRed() - cc.getRed()) < accuracy) && (Math.abs(c.getGreen() - cc.getGreen()) < accuracy) && ((Math.abs(c.getBlue() - cc.getBlue())) < accuracy)){
+            return true;
+        }
+        return false;
+    }
 
 
 }
+
+
