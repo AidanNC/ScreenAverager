@@ -23,7 +23,7 @@ public class Runner {
         BufferedImage img = null;
 
 
-        int size = 10;
+        int size = 2;
 
 
         //img = info.getScreenshot();
