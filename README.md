@@ -1,7 +1,7 @@
 # README #
 
 ### What is this repository for? ###
-Averaging the Screen and makingit look more pixalized
+Averaging the Screen and making it look more pixalized
 
 ### How do I get set up? ###
 
